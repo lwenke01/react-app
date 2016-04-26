@@ -1,13 +1,18 @@
 'use strict'
 module.exports = {
-  entry: './app.js',
+  entry: './app/index.js',
   output: {
     path: __dirname + '/build/',
     filename: 'bundle.js'
   },
   module: {
-    loaders:[
-      {test: /\.css$/ ,loader: 'style!css'}
-    ]
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel',
+      query: {
+        presets: ['react', 'es2015']
+      }
+    }]
   }
 };

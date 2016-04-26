@@ -20,6 +20,27 @@ var arcades = [
   }
 ];
 
+//   React.createElement('form', {className: 'arcadeForm'},
+//     React.createElement('input', {
+//       type: 'text',
+//       placeholder: 'Name',
+//       value: this.props.arcades.name,
+//     }),
+//     React.createElement('input', {
+//       type: 'text',
+//       placeholder: 'Location',
+//       value: this.props.arcades.location,
+//     }),
+//     React.createElement('input', {
+//       type: 'text',
+//       placeholder: 'Hours',
+//       value: this.props.arcades.hours,
+//     }),
+//     React.createElement('button', {
+//       type: 'submit'}, "Add Arcade")
+//   )
+// )
+// },
 var GetArcades = React.createClass({
   getInitialState: function (){
     return {
@@ -87,6 +108,7 @@ var App = React.createClass({
       {this.state.arcades.map(function (arcade){
         return (
 
+            // <GetArcades onChange={that.updateArcade.bind(null, arcade)} name={arcade.name} location={arcade.location} hours={arcade.hours}></GetArcades>
           <GetArcades onClick={that.deleteArcade.bind(null, arcade)} name={arcade.name} location={arcade.location} hours={arcade.hours}></GetArcades>
         )
       })}
@@ -95,4 +117,3 @@ var App = React.createClass({
   }
 })
 ReactDOM.render(<App arcades={arcades}></App>, document.body);
-// ReactDOM.render(<App arcades={arcades}></App>, document.body);
